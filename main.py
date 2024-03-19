@@ -27,11 +27,11 @@ from sklearn.svm import LinearSVC
 # with open('model/model_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
 #    classifier = pickle.load(f)
 
-with gzip.open('model_tokenizador_descripcion_a_modelos.pkl.gz', 'rb') as f:
-    train_set, valid_set, test_set = pickle.load(f)
+# with gzip.open('model_tokenizador_descripcion_a_modelos.pkl.gz', 'rb') as f:
+    # train_set, valid_set, test_set = pickle.load(f)
 
-with open('vectorizador_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
-    real_vectorizer = pickle.load(f)
+# with open('vectorizador_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
+    # real_vectorizer = pickle.load(f)
 
 # Tokenizar en palabras
 # def tokenize(sentence):
