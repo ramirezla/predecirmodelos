@@ -51,7 +51,7 @@ def tokenize(sentence):
 	return tokens
 	
 @app.get('/predecir_modelo/{texto}')
-def peliculas_idioma(texto:str):
+def predecir_modelo(texto:str):
 	# Preprocesar el texto de ejemplo utilizando el mismo tokenizador
 	texto_preprocesado = [texto_ejemplo]
 
