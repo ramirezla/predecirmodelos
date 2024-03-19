@@ -33,9 +33,6 @@ with gzip.open('model_tokenizador_descripcion_a_modelos.pkl.gz', 'rb') as f:
 with open('vectorizador_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
     real_vectorizer = pickle.load(f)
 
-# Se instancia una variable de tipo FastAPI
-app = FastAPI(title='ML_predecir_usar_modelo-main', description='Luis A Ramirez G')
-
 # Tokenizar en palabras
 def tokenize(sentence):
 	import string
@@ -50,9 +47,13 @@ def tokenize(sentence):
 		if new_token:
 			tokens.append("".join(new_token))
 	return tokens
+
+# Se instancia una variable de tipo FastAPI
+#app = FastAPI(title='ML_predecir_usar_modelo-main', description='Luis A Ramirez G')
+app = FastAPI()
 	
 @app.get('/predecir_modelo/{texto}')
-def predecir_modelo(texto:str):
+def predecir_modelo(texto: str):
     try:
 		# Preprocesar el texto de ejemplo utilizando el mismo tokenizador
 		texto_preprocesado=["chevrolet ave 4 ptas"]
@@ -62,4 +63,4 @@ def predecir_modelo(texto:str):
 		##prediccion=classifier.predict(texto_transformado)
     except (ValueError, SyntaxError):
         pass 
-	return list(texto_preprocesado)
+	return texto_preprocesado
