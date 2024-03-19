@@ -33,7 +33,7 @@ with gzip.open('model_tokenizador_descripcion_a_modelos.pkl.gz', 'rb') as f:
 with open('vectorizador_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
     real_vectorizer = pickle.load(f)
 
-Tokenizar en palabras
+# Tokenizar en palabras
 def tokenize(sentence):
 	import string
 	
