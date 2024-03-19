@@ -55,7 +55,7 @@ def predecir_modelo(texto: str):
 @app.get('/get_modelo/{texto}')
 def get_modelo(director:str):
     try:
-		texto_preprocesado = director
+		texto_preprocesado=director
     except (ValueError, SyntaxError):
         pass 
     return {texto_preprocesado}
