@@ -54,13 +54,8 @@ app = FastAPI()
 	
 @app.get('/predecir_modelo/{texto}')
 def predecir_modelo(texto: str):
-    try:
-		# Preprocesar el texto de ejemplo utilizando el mismo tokenizador
+	try:
 		texto_preprocesado="chevrolet ave 4 ptas"
-		# Transformar el texto preprocesado utilizando el vectorizador cargado
-		##texto_transformado=real_vectorizer.transform(texto_preprocesado)
-		# Realizar la predicción utilizando el modelo cargado
-		##prediccion=classifier.predict(texto_transformado)
-    except (ValueError, SyntaxError):
-        pass 
+	except (ValueError, SyntaxError):
+		pass 
 	return texto_preprocesado

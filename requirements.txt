@@ -1,5 +1,3 @@
 pip
 uvicorn
-fastapi
-scikit-learn
-torch
+
