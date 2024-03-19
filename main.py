@@ -8,6 +8,9 @@
 # Python 3.6.8<br>
 
 from fastapi import FastAPI
+import pandas as pd
+import numpy as np
+
 #import pickle
 #import string
 ##from sklearn.feature_extraction.text import CountVectorizer
