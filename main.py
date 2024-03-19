@@ -61,4 +61,4 @@ def peliculas_idioma(texto:str):
 	# Realizar la predicción utilizando el modelo cargado
 	prediccion = classifier.predict(texto_transformado)
 	
-	return {str(prediccion)}
+	return prediccion
