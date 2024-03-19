@@ -49,7 +49,7 @@ def tokenize(sentence):
 		if new_token:
 			tokens.append("".join(new_token))
 	return tokens
-
+	
 @app.get('/predecir_modelo/{texto}')
 def peliculas_idioma(texto:str):
 	# Preprocesar el texto de ejemplo utilizando el mismo tokenizador
@@ -61,4 +61,4 @@ def peliculas_idioma(texto:str):
 	# Realizar la predicción utilizando el modelo cargado
 	prediccion = classifier.predict(texto_transformado)
 	
-	return {prediccion} 
+	return prediccion
