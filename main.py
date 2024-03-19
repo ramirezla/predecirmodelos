@@ -61,4 +61,4 @@ def predecir_modelo(texto:str):
 	# Realizar la predicción utilizando el modelo cargado
 	prediccion = classifier.predict(texto_transformado)
 	
-	return prediccion
+	return {prediccion}
