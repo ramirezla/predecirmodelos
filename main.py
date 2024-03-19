@@ -16,16 +16,21 @@
 # transformers==4.18.0<br>
 
 from fastapi import FastAPI
+import gzip
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.svm import LinearSVC
 # import sys
 
-# Cargar el modelo y el vectorizador desde archivos
-with open('model/model_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
-    classifier = pickle.load(f)
 
-with open('model/vectorizador_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
+# Cargar el modelo y el vectorizador desde archivos
+# with open('model/model_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
+#    classifier = pickle.load(f)
+
+with gzip.open('model_tokenizador_descripcion_a_modelos.pkl.gz', 'rb') as f:
+    train_set, valid_set, test_set = pickle.load(f)
+
+with open('vectorizador_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
     real_vectorizer = pickle.load(f)
 
 # Se instancia una variable de tipo FastAPI
