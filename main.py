@@ -7,14 +7,6 @@
 # OS: Linux x64 3.10.0-1160.92.1.el7.x8_64<br>
 # Python 3.6.8<br>
 
-# fastapi==0.93.0<br>
-# pandas==1.3.5<br>
-# pip==23.2.1<br>
-# scikit-learn==1.0.2<br>
-# tokenizers==0.12.1<br>
-# torch==1.10.2<br>
-# transformers==4.18.0<br>
-
 from fastapi import FastAPI
 #import pickle
 #import string
@@ -57,6 +49,13 @@ def predecir_modelo(texto: str):
 	try:
 		texto_preprocesado=["chevrolet ave 4 ptas"]
 	except (ValueError, SyntaxError):
-		#pass 
 		texto_preprocesado="por aqui ando"
 	return {'Es: ':texto_preprocesado}
+	
+@app.get('/get_modelo/{texto}')
+def get_modelo(director:str):
+    try:
+		texto_preprocesado = director
+    except (ValueError, SyntaxError):
+        pass 
+    return {texto_preprocesado}
