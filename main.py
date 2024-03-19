@@ -53,7 +53,7 @@ def tokenize(sentence):
 @app.get('/predecir_modelo/{texto}')
 def predecir_modelo(texto:str):
 	# Preprocesar el texto de ejemplo utilizando el mismo tokenizador
-	texto_preprocesado = [texto_ejemplo]
+	texto_preprocesado = [texto]
 
 	# Transformar el texto preprocesado utilizando el vectorizador cargado
 	texto_transformado = real_vectorizer.transform(texto_preprocesado)
@@ -61,4 +61,4 @@ def predecir_modelo(texto:str):
 	# Realizar la predicción utilizando el modelo cargado
 	prediccion = classifier.predict(texto_transformado)
 	
-	return {prediccion}
+	return prediccion
