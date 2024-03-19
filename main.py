@@ -57,5 +57,6 @@ def predecir_modelo(texto: str):
 	try:
 		texto_preprocesado=["chevrolet ave 4 ptas"]
 	except (ValueError, SyntaxError):
-		pass 
+		#pass 
+		texto_preprocesado="por aqui ando"
 	return {'Es: ':texto_preprocesado}
