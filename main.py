@@ -55,7 +55,7 @@ app = FastAPI()
 @app.get('/predecir_modelo/{texto}')
 def predecir_modelo(texto: str):
 	try:
-		texto_preprocesado="chevrolet ave 4 ptas"
+		texto_preprocesado=["chevrolet ave 4 ptas"]
 	except (ValueError, SyntaxError):
 		pass 
 	return {'Es: ':texto_preprocesado}
