@@ -16,7 +16,6 @@
 # transformers==4.18.0<br>
 
 from fastapi import FastAPI
-import gzip
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.svm import LinearSVC
