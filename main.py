@@ -17,7 +17,7 @@
 
 from fastapi import FastAPI
 import pickle
-import string
+#import string
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.svm import LinearSVC
 # import sys
