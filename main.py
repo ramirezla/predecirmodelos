@@ -34,19 +34,19 @@ with open('vectorizador_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
     real_vectorizer = pickle.load(f)
 
 # Tokenizar en palabras
-def tokenize(sentence):
-	import string
+# def tokenize(sentence):
+	# import string
 	
-	punctuation = set(string.punctuation)
-	tokens = []
-	for token in sentence.split():
-		new_token = []
-		for character in token:
-			if character not in punctuation:
-				new_token.append(character.lower())
-		if new_token:
-			tokens.append("".join(new_token))
-	return tokens
+	# punctuation = set(string.punctuation)
+	# tokens = []
+	# for token in sentence.split():
+		# new_token = []
+		# for character in token:
+			# if character not in punctuation:
+				# new_token.append(character.lower())
+		# if new_token:
+			# tokens.append("".join(new_token))
+	# return tokens
 
 # Se instancia una variable de tipo FastAPI
 #app = FastAPI(title='ML_predecir_usar_modelo-main', description='Luis A Ramirez G')
