@@ -16,14 +16,13 @@ from sklearn.svm import LinearSVC
 import string
 
 # Se instancia una variable de tipo FastAPI
-app = FastAPI(title='ML_predecir_usar_modelo-main', description='Luis A Ramirez G')
+#app = FastAPI(title='ML_predecir_usar_modelo-main', description='Luis A Ramirez G')
 
 # Tokenizar en palabras
 filename = "model_descripcion_a_modelos.pkl"
 pipeline = pickle.load(open(filename, "rb"))
 
-# app = FastAPI()
-
+app = FastAPI()
 @app.get('/predecir_modelo/{texto}')
 def predecir_modelo(texto: str):
  try:
