@@ -1,4 +1,7 @@
 pip
+pandas
+numpy
+csv
 uvicorn
 fastapi
 scikit-learn
