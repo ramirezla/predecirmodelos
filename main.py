@@ -8,57 +8,27 @@
 # Python 3.6.8<br>
 
 from fastapi import FastAPI
-import pandas as pd
-import numpy as np
 
-#import pickle
-#import string
-##from sklearn.feature_extraction.text import CountVectorizer
-##from sklearn.svm import LinearSVC
-# import sys
-
-
-# Cargar el modelo y el vectorizador desde archivos
-# with open('model_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
-#    classifier = pickle.load(f)
-
-# with gzip.open('model_tokenizador_descripcion_a_modelos.pkl.gz', 'rb') as f:
-    # train_set, valid_set, test_set = pickle.load(f)
-
-# with open('vectorizador_tokenizador_descripcion_a_modelos.pkl', 'rb') as f:
-    # real_vectorizer = pickle.load(f)
-
-# Tokenizar en palabras
-# def tokenize(sentence):
-	# import string
-	
-	# punctuation = set(string.punctuation)
-	# tokens = []
-	# for token in sentence.split():
-		# new_token = []
-		# for character in token:
-			# if character not in punctuation:
-				# new_token.append(character.lower())
-		# if new_token:
-			# tokens.append("".join(new_token))
-	# return tokens
+import pickle
+import gzip
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.svm import LinearSVC
+import string
 
 # Se instancia una variable de tipo FastAPI
-#app = FastAPI(title='ML_predecir_usar_modelo-main', description='Luis A Ramirez G')
-app = FastAPI()
-	
+app = FastAPI(title='ML_predecir_usar_modelo-main', description='Luis A Ramirez G')
+
+# Tokenizar en palabras
+filename = "model_descripcion_a_modelos.pkl"
+pipeline = pickle.load(open(filename, "rb"))
+
+# app = FastAPI()
+
 @app.get('/predecir_modelo/{texto}')
 def predecir_modelo(texto: str):
-	try:
-		texto_preprocesado=["chevrolet ave 4 ptas"]
-	except (ValueError, SyntaxError):
-		texto_preprocesado="por aqui ando"
-	return {'Es: ':texto_preprocesado}
-	
-@app.get('/get_modelo/{texto}')
-def get_modelo(director:str):
-    try:
-		texto_preprocesado=director
-    except (ValueError, SyntaxError):
-        pass 
-    return {texto_preprocesado}
+ try:
+  cadenaMarcaModelo = texto
+  prediccion = pipeline.predict([cadenaMarcaModelo])
+ except (ValueError, SyntaxError):
+  pass
+ return {'Es: ':prediccion}
