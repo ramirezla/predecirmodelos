@@ -1,4 +1,4 @@
 pip
 uvicorn
 fastapi
-
+scikit-learn
