@@ -30,4 +30,4 @@ def predecir_modelo(texto: str):
   prediccion = pipeline.predict([cadenaMarcaModelo])
  except (ValueError, SyntaxError):
   pass
- return {'Es: ':prediccion}
+ return prediccion
